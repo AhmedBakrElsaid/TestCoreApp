@@ -1,0 +1,30 @@
+﻿@model Item
+@{
+    ViewData["Title"] = "New";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div asp-validation-summary="All"></div>
+        <div class="row pb-2">
+            <h2 class="text-primary">Add New Item</h2>
+            <hr />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <button type="submit"class="btn btn-primary" style="width:150px">Save</button>
+        <a asp-action="Index" asp-controller="Items" style="width:150px"class="btn btn-secondary">
+            Back To Items
+        </a>
+    </div>
+</form>
+
